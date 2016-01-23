@@ -55,12 +55,3 @@ class DiskDriller(object):
         speed = (loop_counter * file_size) / consumed_time
 
         return speed
-
-
-if __name__ == '__main__':
-    dirname = os.getcwd()
-    speed = DiskDriller.drill(dirname)
-
-    print('Speed: {speed:.2f} MBs per second'.format(
-        speed=speed
-    ))
