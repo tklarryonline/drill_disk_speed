@@ -5,7 +5,7 @@ from time import time
 class DiskDriller(object):
     # Default to be 1 MB, converted to Bytes
     # 1 MB = 1024 KB = 1024^2 Bytes = 2^20 Bytes
-    DRILLER_FILE_SIZE = 10 ** 6
+    DRILLER_FILE_SIZE = 2 ** 20
     DRILLER_FILE_NAME = 'driller_testing.txt'
     DRILLING_TIME_LIMIT = 0.5  # in seconds
     TEST_STRING = 'All hail the drillist'
