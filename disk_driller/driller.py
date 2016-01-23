@@ -7,16 +7,20 @@ class DiskDriller(object):
     # 1 MB = 1024 KB = 1024^2 Bytes = 2^20 Bytes
     DRILLER_FILE_SIZE = 10 ** 6
     DRILLER_FILE_NAME = 'driller_testing.txt'
-    DRILLING_TIME_LIMIT = 5  # in seconds
+    DRILLING_TIME_LIMIT = 0.5  # in seconds
+    TEST_STRING = 'All hail the drillist'
 
-    @staticmethod
-    def write_drilling_file(file_name, file_size=DRILLER_FILE_SIZE):
+    @classmethod
+    def write_drilling_file(cls, file_name, file_size=DRILLER_FILE_SIZE):
         '''
         Write a text file which is of file_size MB big. Then remove it. Just to test.
         '''
 
-        with open(file_name, 'wb') as f:
-            f.write(os.urandom(file_size))
+        file_length = int(file_size / len(cls.TEST_STRING))
+
+        with open(file_name, 'w') as f:
+            for i in range(file_length):
+                f.write(cls.TEST_STRING)
 
         os.remove(file_name)
 
